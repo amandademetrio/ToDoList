@@ -14,21 +14,21 @@
         <!--Table View Controller-->
         <scene sceneID="VpY-Ee-OW3">
             <objects>
-                <tableViewController id="l2Y-bu-hwB" sceneMemberID="viewController">
+                <tableViewController id="l2Y-bu-hwB" customClass="TableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c5T-k7-LfN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoItem" rowHeight="97" id="UnU-MP-0Wp">
-                                <rect key="frame" x="0.0" y="28" width="375" height="97"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoItemCell" rowHeight="131" id="UnU-MP-0Wp" customClass="ToDoItemCell" customModule="ToDoList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UnU-MP-0Wp" id="Akd-aW-Pjl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="130.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go to the store and buy Alfie a cute bikini" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozl-i8-I6N">
-                                            <rect key="frame" x="20" y="61.5" width="335" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go to the store and buy Alfie a cute bikini" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozl-i8-I6N">
+                                            <rect key="frame" x="20" y="61" width="335" height="55"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -40,22 +40,29 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Alfie a pink pikini" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKY-wP-DB9">
-                                            <rect key="frame" x="20" y="15" width="162" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="20" y="15" width="174.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Ozl-i8-I6N" firstAttribute="top" secondItem="LLe-nH-FY9" secondAttribute="bottom" constant="25" id="Bxe-ke-h8G"/>
                                         <constraint firstItem="LLe-nH-FY9" firstAttribute="trailing" secondItem="Akd-aW-Pjl" secondAttribute="trailingMargin" constant="4" id="P6o-Rx-Qih"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Ozl-i8-I6N" secondAttribute="trailing" constant="4" id="PS2-KU-S4X"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Ozl-i8-I6N" secondAttribute="bottom" constant="4" id="QoT-pe-plh"/>
+                                        <constraint firstItem="Ozl-i8-I6N" firstAttribute="top" secondItem="UKY-wP-DB9" secondAttribute="bottom" constant="25" id="gog-qV-PST"/>
                                         <constraint firstItem="UKY-wP-DB9" firstAttribute="leading" secondItem="Akd-aW-Pjl" secondAttribute="leadingMargin" constant="4" id="ha7-aS-OA8"/>
                                         <constraint firstItem="UKY-wP-DB9" firstAttribute="top" secondItem="Akd-aW-Pjl" secondAttribute="topMargin" constant="4" id="pk6-32-8A8"/>
                                         <constraint firstItem="LLe-nH-FY9" firstAttribute="top" secondItem="Akd-aW-Pjl" secondAttribute="topMargin" constant="4" id="qtx-Fe-Hz9"/>
                                         <constraint firstItem="Ozl-i8-I6N" firstAttribute="leading" secondItem="Akd-aW-Pjl" secondAttribute="leadingMargin" constant="4" id="vBa-p6-RfL"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="taskDateLabel" destination="LLe-nH-FY9" id="6wX-hs-cNk"/>
+                                    <outlet property="taskNotesLabel" destination="Ozl-i8-I6N" id="995-et-6lM"/>
+                                    <outlet property="taskTitleLabel" destination="UKY-wP-DB9" id="NQf-PW-MoZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -64,7 +71,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="2tu-Uc-scI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0eS-pm-pX0"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0eS-pm-pX0">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="l2Y-bu-hwB" id="lkS-Oa-lEi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="sB6-8M-MIZ" kind="presentation" identifier="ListToAddSegue" id="0mE-kq-Wwr"/>
@@ -74,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="660" y="-46.326836581709152"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Item View Controller-->
         <scene sceneID="YfH-hl-bqw">
             <objects>
-                <viewController id="sB6-8M-MIZ" sceneMemberID="viewController">
+                <viewController id="sB6-8M-MIZ" customClass="AddItemViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="coF-6d-zwQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,6 +110,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="558512870.31489396">
                                     <!--2018-09-13 06:27:50 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePickerSelected:" destination="sB6-8M-MIZ" eventType="valueChanged" id="sIo-cr-sMz"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgt-Nr-Cn3">
                                 <rect key="frame" x="32" y="392" width="311" height="41"/>
@@ -106,6 +120,9 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add Item"/>
+                                <connections>
+                                    <action selector="addItemButtonPressed:" destination="sB6-8M-MIZ" eventType="touchUpInside" id="Yqd-Ee-Umg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,6 +142,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L1a-DB-8aX"/>
                     </view>
+                    <connections>
+                        <outlet property="addItemButton" destination="kgt-Nr-Cn3" id="MYe-gI-1tj"/>
+                        <outlet property="datePicker" destination="vze-zY-vxG" id="gcq-cR-tPu"/>
+                        <outlet property="taskNameTextField" destination="snN-Mf-GQB" id="uxQ-0J-pnQ"/>
+                        <outlet property="taskNotesTextField" destination="3ox-a7-vfw" id="qkC-jp-LtP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pvc-Fe-Lsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
